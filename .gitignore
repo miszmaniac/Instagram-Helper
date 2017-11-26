@@ -7,6 +7,4 @@ build/
 *.orig
 *.txt
 
-gradlew
-gradlew.bat
 local.properties
