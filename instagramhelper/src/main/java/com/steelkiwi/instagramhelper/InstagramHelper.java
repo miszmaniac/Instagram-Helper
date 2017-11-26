@@ -34,6 +34,11 @@ public class InstagramHelper {
     }
 
     public void loginFromActivity(Activity context) {
+        Intent intent = getLoginIntent(context);
+        context.startActivityForResult(intent, INSTA_LOGIN);
+    }
+
+    public Intent getLoginIntent(Context context) {
         String authUrl = MessageFormat.format(AUTH_URL
                 + CLIENT_ID_DEF + "{0}"
                 + REDIRECT_URI_DEF + "{1}"
@@ -49,7 +54,7 @@ public class InstagramHelper {
         bundle.putString(INSTA_AUTH_URL, authUrl);
         bundle.putString(INSTA_REDIRECT_URL, redirectUri);
         intent.putExtras(bundle);
-        context.startActivityForResult(intent, INSTA_LOGIN);
+        return intent;
     }
 
     public InstagramUser getInstagramUser(Context context) {
