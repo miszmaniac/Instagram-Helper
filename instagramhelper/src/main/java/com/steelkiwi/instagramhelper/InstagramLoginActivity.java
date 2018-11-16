@@ -66,6 +66,7 @@ public class InstagramLoginActivity extends Activity {
         webSettings.setSavePassword(false);
         webSettings.setAppCacheEnabled(false);
         webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+        webSettings.setDomStorageEnabled(true);
         mWebView.loadUrl(mAuthUrl);
     }
 
